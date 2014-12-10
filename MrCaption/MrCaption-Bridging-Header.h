@@ -7,6 +7,9 @@
 //
 
 #ifndef MrCaption_Bridging_Header_h
+
+#import "ImageCropper.h"
+
 #define MrCaption_Bridging_Header_h
 
 

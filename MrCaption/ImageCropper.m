@@ -11,12 +11,17 @@
 @implementation ImageCropper
 
 - (id)initWithImage:(UIImage *)image {
+    
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height;
+    
     self = [super init];
     if (self) {
         
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
         // Initialize UIScrollView - Size Can be Self Determined
-        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, 320, 436)];
+        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, screenWidth, screenHeight)];
         [_scrollView setBackgroundColor:[UIColor blackColor]];
         [_scrollView setDelegate:self];
         [_scrollView setShowsHorizontalScrollIndicator:NO];
@@ -42,7 +47,7 @@
         [[self view] addSubview:_scrollView];
         
         // Set NAvigation Bar
-        UINavigationBar *navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, 320, 64)];
+        UINavigationBar *navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 64)];
         // Set Navigation Item
         UINavigationItem *aNavigationItem = [[UINavigationItem alloc] initWithTitle:@"Zoom/Cut"];
         // Set Cancel Button

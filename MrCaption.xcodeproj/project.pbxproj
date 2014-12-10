@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0FC39E031A369EAE00CE6FDA /* CreatPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC39E021A369EAE00CE6FDA /* CreatPageController.swift */; };
+		0FC39E051A36AB1600CE6FDA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC39E041A36AB1600CE6FDA /* AVFoundation.framework */; };
+		0FC39E071A36AB2500CE6FDA /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC39E061A36AB2500CE6FDA /* AVKit.framework */; };
+		0FC39E0A1A37384E00CE6FDA /* ImageCropper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC39E091A37384E00CE6FDA /* ImageCropper.m */; };
 		C52F4F6D1A2DE3FD003C750D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52F4F6C1A2DE3FD003C750D /* AppDelegate.swift */; };
 		C52F4F6F1A2DE3FD003C750D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52F4F6E1A2DE3FD003C750D /* ViewController.swift */; };
 		C52F4F721A2DE3FD003C750D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C52F4F701A2DE3FD003C750D /* Main.storyboard */; };
@@ -28,6 +31,11 @@
 
 /* Begin PBXFileReference section */
 		0FC39E021A369EAE00CE6FDA /* CreatPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatPageController.swift; sourceTree = "<group>"; };
+		0FC39E041A36AB1600CE6FDA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0FC39E061A36AB2500CE6FDA /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		0FC39E081A37384D00CE6FDA /* MrCaption-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MrCaption-Bridging-Header.h"; sourceTree = "<group>"; };
+		0FC39E091A37384E00CE6FDA /* ImageCropper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCropper.m; sourceTree = "<group>"; };
+		0FC39E0B1A3738AF00CE6FDA /* ImageCropper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCropper.h; sourceTree = "<group>"; };
 		C52F4F671A2DE3FD003C750D /* MrCaption.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MrCaption.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C52F4F6B1A2DE3FD003C750D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C52F4F6C1A2DE3FD003C750D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FC39E071A36AB2500CE6FDA /* AVKit.framework in Frameworks */,
+				0FC39E051A36AB1600CE6FDA /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +71,8 @@
 		C52F4F5E1A2DE3FD003C750D = {
 			isa = PBXGroup;
 			children = (
+				0FC39E061A36AB2500CE6FDA /* AVKit.framework */,
+				0FC39E041A36AB1600CE6FDA /* AVFoundation.framework */,
 				C52F4F691A2DE3FD003C750D /* MrCaption */,
 				C52F4F7F1A2DE3FD003C750D /* MrCaptionTests */,
 				C52F4F681A2DE3FD003C750D /* Products */,
@@ -83,9 +95,12 @@
 				C52F4F6E1A2DE3FD003C750D /* ViewController.swift */,
 				C52F4F701A2DE3FD003C750D /* Main.storyboard */,
 				0FC39E021A369EAE00CE6FDA /* CreatPageController.swift */,
+				0FC39E091A37384E00CE6FDA /* ImageCropper.m */,
+				0FC39E0B1A3738AF00CE6FDA /* ImageCropper.h */,
 				C52F4F731A2DE3FD003C750D /* Images.xcassets */,
 				C52F4F751A2DE3FD003C750D /* LaunchScreen.xib */,
 				C52F4F6A1A2DE3FD003C750D /* Supporting Files */,
+				0FC39E081A37384D00CE6FDA /* MrCaption-Bridging-Header.h */,
 			);
 			path = MrCaption;
 			sourceTree = "<group>";
@@ -219,6 +234,7 @@
 				C52F4F6F1A2DE3FD003C750D /* ViewController.swift in Sources */,
 				C52F4F6D1A2DE3FD003C750D /* AppDelegate.swift in Sources */,
 				0FC39E031A369EAE00CE6FDA /* CreatPageController.swift in Sources */,
+				0FC39E0A1A37384E00CE6FDA /* ImageCropper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +360,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Yl WAN (28U4X24HEM)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yl WAN (28U4X24HEM)";
 				INFOPLIST_FILE = MrCaption/Info.plist;
@@ -351,6 +368,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c77c6e75-c559-47fd-8aeb-f58c63f7f630";
+				SWIFT_OBJC_BRIDGING_HEADER = "MrCaption/MrCaption-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -359,6 +378,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Yl WAN (28U4X24HEM)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yl WAN (28U4X24HEM)";
 				INFOPLIST_FILE = MrCaption/Info.plist;
@@ -366,6 +386,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c77c6e75-c559-47fd-8aeb-f58c63f7f630";
+				SWIFT_OBJC_BRIDGING_HEADER = "MrCaption/MrCaption-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MobileCoreServices
 
 class addTableViewCell: UITableViewCell {
     @IBOutlet var addImgBtn: UIButton!
@@ -208,19 +209,99 @@ class createPageViewController: UIViewController,UITableViewDataSource, UITableV
          return [deleteAction]
     }
     
- 
-        
+    // Return Availability of Taking photo
+    func cameraSupportsMedia(mediaType: String,
+        sourceType: UIImagePickerControllerSourceType) -> Bool{
+            
+            let availableMediaTypes =
+            UIImagePickerController.availableMediaTypesForSourceType(sourceType) as
+                [String]?
+            
+            if let types = availableMediaTypes{
+                for type in types{
+                    if type == mediaType{
+                        return true
+                    }
+                }
+            }
+            
+            return false
+    }
+    
+    func doesCameraSupportTakingPhotos() -> Bool{
+        return cameraSupportsMedia(kUTTypeImage as NSString, sourceType: .Camera)
+    }
+    
+    func isCameraAvailable() -> Bool{
+        return UIImagePickerController.isCameraDeviceAvailable(.Front) || UIImagePickerController.isCameraDeviceAvailable(.Rear)
+    }
+    
+    func selectPicFromAlbum(){
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary){
+            //println("Button capture")
+            
+            // replace image picker with an self Defined ImagePicker to Enable this function
+            /* like this in class:
+                
+            var imagePicker = UIImagePickerController()
+            var imageCropper = ImageCropper()
 
+            */
+            //imagePicker.delegate = self
+            //imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary;
+            //imagePicker.allowsEditing = true
+            
+            //self.presentViewController(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func selectPicFromCamera(){
+        
+        if isCameraAvailable() && doesCameraSupportTakingPhotos(){
+            /* Same as function "selectPicFromAlbum */
+            
+            //imagePicker.sourceType = .Camera
+            
+            //imagePicker.mediaTypes = [kUTTypeImage as NSString]
+            
+            //imagePicker.allowsEditing = true
+            //imagePicker.delegate = self
+            
+            //presentViewController(imagePicker, animated: true, completion: nil)
+            
+        }
+    }
+
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in})
+        
+        // replace image Cropper with an self Defined ImageCropper to Enable this function
+        /* like this in class:
+        
+        var imageCropper = ImageCropper()
+        
+        */
+        
+        //imageBox_1.image = image
+        
+        //imageCropper = ImageCropper(image: image)
+        
+        //imageCropper.delegate = self
+        
+        //presentViewController(imageCropper, animated: true, completion: nil)
+    }
+    
+    func imageCropper(cropper: ImageCropper!, didFinishCroppingWithImage image: UIImage!){
+        // replace imageBox_1 with an outside ImageView to Enable this function
+        
+        //imageBox_1.image = image
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
- 
-    
-    
-
-
 
 }
 

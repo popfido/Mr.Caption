@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FC39E0D1A384C8A00CE6FDA /* ImageCropper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC39E0C1A384C8A00CE6FDA /* ImageCropper.m */; };
 		C502357E1A384176002DB9EA /* watermarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C502357C1A384176002DB9EA /* watermarkTableViewCell.swift */; };
 		C502357F1A384176002DB9EA /* watermarkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C502357D1A384176002DB9EA /* watermarkTableViewCell.xib */; };
 		C52E01D61A36FF5E0099EC0F /* createTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52E01D41A36FF5E0099EC0F /* createTableViewCell.swift */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FC39E0C1A384C8A00CE6FDA /* ImageCropper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCropper.m; sourceTree = "<group>"; };
+		0FC39E0E1A384CDF00CE6FDA /* ImageCropper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCropper.h; sourceTree = "<group>"; };
 		C502357C1A384176002DB9EA /* watermarkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = watermarkTableViewCell.swift; sourceTree = "<group>"; };
 		C502357D1A384176002DB9EA /* watermarkTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = watermarkTableViewCell.xib; sourceTree = "<group>"; };
 		C52E01D41A36FF5E0099EC0F /* createTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = createTableViewCell.swift; path = ../createTableViewCell.swift; sourceTree = "<group>"; };
@@ -94,6 +97,8 @@
 			children = (
 				C52F4F6C1A2DE3FD003C750D /* AppDelegate.swift */,
 				C52F4F6E1A2DE3FD003C750D /* ViewController.swift */,
+				0FC39E0C1A384C8A00CE6FDA /* ImageCropper.m */,
+				0FC39E0E1A384CDF00CE6FDA /* ImageCropper.h */,
 				C52F4F701A2DE3FD003C750D /* Main.storyboard */,
 				C52E01D41A36FF5E0099EC0F /* createTableViewCell.swift */,
 				C52E01D51A36FF5E0099EC0F /* createTableViewCell.xib */,
@@ -243,6 +248,7 @@
 				C52F4F6F1A2DE3FD003C750D /* ViewController.swift in Sources */,
 				C502357E1A384176002DB9EA /* watermarkTableViewCell.swift in Sources */,
 				C52F4F6D1A2DE3FD003C750D /* AppDelegate.swift in Sources */,
+				0FC39E0D1A384C8A00CE6FDA /* ImageCropper.m in Sources */,
 				C52E01D61A36FF5E0099EC0F /* createTableViewCell.swift in Sources */,
 				C5783AD81A37958100B3113C /* bottomTableViewCell.swift in Sources */,
 			);

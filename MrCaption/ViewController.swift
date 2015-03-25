@@ -8,6 +8,7 @@
 
 import UIKit
 import MobileCoreServices
+import QuartzCore
 
 class addTableViewCell: UITableViewCell {
     @IBOutlet var addImgBtn: UIButton!
@@ -30,9 +31,35 @@ class addTableViewCell: UITableViewCell {
 //原创页面代码
 class createPageViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
     
-    
-
+    @IBOutlet var bagView: UIView!
     @IBOutlet var tableView: UITableView!
+    @IBAction func btnSave(sender: UIButton) {
+        var layerImage = UIImage()
+        var layerSize = CGSize(width: self.bagView.frame.width, height: self.bagView.frame.height)
+        UIGraphicsBeginImageContextWithOptions(layerSize, false, 2.0)
+        bagView.layer.renderInContext(UIGraphicsGetCurrentContext())
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        //ImageFixation(image: UIImage(), image: UIImage())
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+    }
+    
+    func ImageFixation(image1: UIImage, image2: UIImage){
+        // If want to use ImageView, Change UIImage to UIImageView and set image1.size to image1.frame.size
+        // Also, set imagex.drawInRect to imagex.image?.drawInRect
+        var size = CGSize(width: image1.size.width, height: image1.size.height)
+        UIGraphicsBeginImageContext(size)
+        
+        image2.drawInRect(CGRect(x: 10,y: 10,width: image2.size.width, height: image2.size.height))
+        image1.drawInRect(CGRect(x: 0,y: 0,width: image1.size.width, height: image1.size.height))
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+
+    }
     
     
     //默认文字及图片生成
@@ -48,7 +75,6 @@ class createPageViewController: UIViewController,UITableViewDataSource, UITableV
         super.viewDidLoad()
         var createPageViewController = self
 
-        
         //设置格子类型
         var nib = UINib(nibName: "createTableViewCell", bundle: nil)
         var nib2 = UINib(nibName: "addTableViewCell", bundle: nil)
@@ -85,7 +111,8 @@ class createPageViewController: UIViewController,UITableViewDataSource, UITableV
     
 
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
         
         var cell:createTableViewCell = tableView.dequeueReusableCellWithIdentifier("createCell") as createTableViewCell
         var addcell:addTableViewCell = tableView.dequeueReusableCellWithIdentifier("addCell") as addTableViewCell
@@ -148,7 +175,8 @@ class createPageViewController: UIViewController,UITableViewDataSource, UITableV
     **/
     
 
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
+    {
         if editingStyle == UITableViewCellEditingStyle.Delete {
             items.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
@@ -157,7 +185,8 @@ class createPageViewController: UIViewController,UITableViewDataSource, UITableV
     }
     
 
-    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]?  {
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]?
+    {
         // 1
         var deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "拖出" ,  handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             // 2
@@ -169,9 +198,6 @@ class createPageViewController: UIViewController,UITableViewDataSource, UITableV
             
             shareMenu.addAction(cancelAction)
             shareMenu.addAction(confirmDeleteAction)
-            
-
-            
             
             self.presentViewController(shareMenu, animated: true, completion: nil)
   **/
@@ -185,9 +211,6 @@ class createPageViewController: UIViewController,UITableViewDataSource, UITableV
             
 
         // 3
-
-
-    
     
      /**
         var rotateAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Rate" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
@@ -282,19 +305,19 @@ class createPageViewController: UIViewController,UITableViewDataSource, UITableV
         
         */
         
-        //imageBox_1.image = image
+        // imageBox_1.image = image
         
-        //imageCropper = ImageCropper(image: image)
+        // imageCropper = ImageCropper(image: image)
         
-        //imageCropper.delegate = self
+        // imageCropper.delegate = self
         
-        //presentViewController(imageCropper, animated: true, completion: nil)
+        // presentViewController(imageCropper, animated: true, completion: nil)
     }
     
     func imageCropper(cropper: ImageCropper!, didFinishCroppingWithImage image: UIImage!){
         // replace imageBox_1 with an outside ImageView to Enable this function
         
-        //imageBox_1.image = image
+        // imageBox_1.image = image
     }
     
     override func didReceiveMemoryWarning() {

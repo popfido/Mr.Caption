@@ -251,29 +251,50 @@
                                         </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" sectionIndexMinimumDisplayRowCount="1" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Q7A-SA-eGn">
-                                        <rect key="frame" x="0.0" y="74" width="318" height="475"/>
+                                        <rect key="frame" x="0.0" y="74" width="318" height="409"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="dataSource" destination="qsB-uh-Bz8" id="vSE-YK-3xk"/>
                                             <outlet property="delegate" destination="qsB-uh-Bz8" id="Ups-Bz-55i"/>
                                         </connections>
                                     </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="51" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUb-QD-ArC" userLabel="Btn_del">
+                                        <rect key="frame" x="8" y="490" width="51" height="50"/>
+                                        <state key="normal" image="create_clear">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vje-HV-fDK" userLabel="Btn_ok">
+                                        <rect key="frame" x="70" y="490" width="240" height="50"/>
+                                        <state key="normal" image="create_final">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnSave:" destination="qsB-uh-Bz8" eventType="touchUpInside" id="qhF-QI-IXL"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="VUb-QD-ArC" firstAttribute="height" secondItem="vje-HV-fDK" secondAttribute="height" id="1vR-FD-jnm"/>
+                                    <constraint firstItem="Q7A-SA-eGn" firstAttribute="leading" secondItem="VUb-QD-ArC" secondAttribute="leading" constant="-8" id="43M-Rf-A2G"/>
+                                    <constraint firstItem="VUb-QD-ArC" firstAttribute="centerY" secondItem="vje-HV-fDK" secondAttribute="centerY" id="6GO-ma-iJS"/>
                                     <constraint firstItem="Q7A-SA-eGn" firstAttribute="top" secondItem="WXF-tC-bAT" secondAttribute="bottom" constant="-1" id="8PS-JL-ve3"/>
                                     <constraint firstItem="cB5-Vp-vmN" firstAttribute="centerY" secondItem="eE5-E2-Ezl" secondAttribute="centerY" id="DCp-aY-7TE"/>
                                     <constraint firstItem="eE5-E2-Ezl" firstAttribute="top" secondItem="prz-xa-VQS" secondAttribute="bottom" constant="2" id="Gy9-St-uNF"/>
                                     <constraint firstAttribute="centerX" secondItem="Q7A-SA-eGn" secondAttribute="centerX" id="I2A-aX-KXJ"/>
                                     <constraint firstAttribute="trailing" secondItem="Q7A-SA-eGn" secondAttribute="trailing" id="KQr-kl-Q6h"/>
                                     <constraint firstItem="Q7A-SA-eGn" firstAttribute="trailing" secondItem="I7O-Nc-CI4" secondAttribute="trailing" constant="12" id="UAN-Z8-Fhx"/>
+                                    <constraint firstAttribute="bottom" secondItem="VUb-QD-ArC" secondAttribute="bottom" constant="8" id="Vat-hU-8RN"/>
                                     <constraint firstItem="WXF-tC-bAT" firstAttribute="top" secondItem="I7O-Nc-CI4" secondAttribute="top" constant="-9" id="bVR-U9-oRx"/>
+                                    <constraint firstItem="Q7A-SA-eGn" firstAttribute="trailing" secondItem="vje-HV-fDK" secondAttribute="trailing" constant="8" id="crD-Ac-C1M"/>
                                     <constraint firstItem="WXF-tC-bAT" firstAttribute="centerY" secondItem="prz-xa-VQS" secondAttribute="centerY" constant="7" id="d0b-Xr-nAS"/>
                                     <constraint firstItem="WXF-tC-bAT" firstAttribute="top" secondItem="fOQ-gA-KFD" secondAttribute="top" constant="14" id="eXx-D1-kA4"/>
                                     <constraint firstItem="eE5-E2-Ezl" firstAttribute="leading" secondItem="prz-xa-VQS" secondAttribute="leading" id="gFd-Td-eRs"/>
+                                    <constraint firstItem="VUb-QD-ArC" firstAttribute="top" secondItem="Q7A-SA-eGn" secondAttribute="bottom" constant="7" id="krG-JK-if4"/>
                                     <constraint firstItem="Q7A-SA-eGn" firstAttribute="leading" secondItem="WXF-tC-bAT" secondAttribute="leading" constant="-8" id="nx5-Cg-qzW"/>
                                     <constraint firstItem="Q7A-SA-eGn" firstAttribute="leading" secondItem="fOQ-gA-KFD" secondAttribute="leading" id="oFc-wY-TRW"/>
-                                    <constraint firstAttribute="bottom" secondItem="Q7A-SA-eGn" secondAttribute="bottom" constant="-1" id="r6h-Od-PZD"/>
+                                    <constraint firstAttribute="bottom" secondItem="Q7A-SA-eGn" secondAttribute="bottom" constant="65" id="r6h-Od-PZD"/>
                                     <constraint firstItem="cB5-Vp-vmN" firstAttribute="trailing" secondItem="I7O-Nc-CI4" secondAttribute="trailing" id="wQ9-iQ-dxK"/>
                                     <constraint firstItem="prz-xa-VQS" firstAttribute="leading" secondItem="WXF-tC-bAT" secondAttribute="trailing" constant="33" id="wXi-VF-zCD"/>
                                 </constraints>
@@ -288,12 +309,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bagView" destination="fOQ-gA-KFD" id="z3h-dI-GIM"/>
                         <outlet property="tableView" destination="Q7A-SA-eGn" id="fRN-XI-wv5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9qu-Kh-Sir" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="694" y="1396"/>
+            <point key="canvasLocation" x="690" y="1414"/>
         </scene>
         <!--drawPage-->
         <scene sceneID="wct-Yv-6Jv">
